@@ -1,0 +1,57 @@
+<section>
+	<input *ngIf="!boot.accounts||boot.accounts.length===0" type="button" value="Connect MetaMask"
+		(click)="boot.connentMetaMask()">
+	<p *ngIf="boot.accounts&&boot.accounts.length>0">
+		<label>当前钱包地址：</label><span>{{boot.accounts[0]}}</span>
+	</p>
+	<p *ngIf="boot.network" [ngSwitch]="boot.network.name">
+		<span *ngSwitchCase="'bnbt'">当前网络BSC测试网</span>
+		<span *ngSwitchCase="'bnb'">当前网络BSC主网</span>
+		<span *ngSwitchDefault>不支持网络</span>
+	</p>
+</section>
+<section *ngIf="boot.isAdmin()">
+	<h1>支付收入:{{getTotalPaymentFeeIncome()}} U</h1>
+	<p>
+		<label>支付手续费USDC: </label><span>{{boot.formatEther(boot.paymentFeeIncomeUsdc)}} USDC</span>
+	</p>
+	<p>
+		<label>支付手续费CUSD: </label><span>{{boot.formatEther(boot.paymentFeeIncomeBusd)}} CUSD</span>
+	</p>
+	<p>
+		<label>支付手续费USDT: </label><span>{{boot.formatEther(boot.paymentFeeIncomeUsdt)}} USDT</span>
+	</p>
+</section>
+<section *ngIf="boot.isAdmin()">
+	<h1>流动性池收入:{{getTotalAdminFeeIncome()}} U</h1>
+	<p>
+		<label>手续费USDC: </label><span>{{boot.formatEther(boot.adminFeeIncomeUsdc)}} USDC</span>
+	</p>
+	<p>
+		<label>手续费CUSD: </label><span>{{boot.formatEther(boot.adminFeeIncomeBusd)}} CUSD</span>
+	</p>
+	<p>
+		<label>手续费USDT: </label><span>{{boot.formatEther(boot.adminFeeIncomeUsdt)}} USDT</span>
+	</p>
+</section>
+<section *ngIf="boot.isAdmin()">
+	<h1>总收入:{{getTotalIncome()}} U</h1>
+</section>
+<section *ngIf="boot.accounts&&boot.accounts.length>0">
+	<h1>退币</h1>
+	<p *ngIf="boot.isAdmin()">
+		<label>全部未领取的退费 USDT: </label><span>{{boot.formatEther(boot.fundsBalance)}} USDT</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<input *ngIf="boot.fundsBalance.gt(0)" type="button" value="全部提走" (click)="boot.withdrawAllFunds()">
+	</p>
+	<p *ngIf="boot.userInfo.refundable else unRefundable">
+		<label>可领取的退币数量：</label><span>{{boot.formatEther(boot.userInfo.fund)}} USDT</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="button" value="领取退币" (click)="boot.withdrawRefund()">
+	</p>
+	<ng-template #unRefundable>
+		<p>
+			<span>没有任何币可领取</span>
+		</p>
+	</ng-template>
+</section>
