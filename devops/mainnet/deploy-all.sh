@@ -1,5 +1,6 @@
-aws s3 cp ../../s3/index.html s3://cstable.fi/
-aws s3 cp ../../s3/favicon.ico s3://cstable.fi/
+aws s3 cp ../../s3/index.html s3://cstable.xyz/
+aws s3 cp ../../s3/error.html s3://cstable.xyz/
+aws s3 cp ../../s3/favicon.ico s3://cstable.xyz/
 ./sync-home-test.sh
 ./sync-pool1-test.sh
 # ./sync-pool2-test.sh

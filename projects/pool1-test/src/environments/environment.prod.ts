@@ -1,30 +1,29 @@
 export const environment = {
-    production: true,
-    poolId: "p1",
-    liquiditySymbol: "CSLP-01",
-    tokenSymbol: "CST",
-    virtualPriceDiff: 0.006,
-    coins: [{ symbol: 'CUSD' }, { symbol: 'USDT' }, { symbol: 'USDC' }],
-    rpc: {
-        56: "https://bsc-dataseed.binance.org/",
-        97: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
-    },
-    chains: {
-        56: {
-            enabled: true,
-            name: 'Mainnet',
-            contracts: {
-                proxy: {
-                    address: "0x931B226EBb7134a19B970cBF74f18E40a4239178"
-                },
-                pid: 0,
-                coins: [
-                    '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3',
-                    '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-                    '0x55d398326f99059ff775485246999027b3197955',
-                ]
-            }
-        },
-    },
-    subgraphApi: "https://api.thegraph.com/subgraphs/name/0xa8c81519/my-subgraph"
+	production: true,
+	poolId: "p1",
+	liquiditySymbol: "CSLP-01",
+	tokenSymbol: "CST",
+	virtualPriceDiff: 0.006,
+	coins: [{ symbol: 'CUSD' }, { symbol: 'USDT' }, { symbol: 'USDC' }],
+	rpc: {
+		42220: 'https://forno.celo.org'
+	},
+	chains: {
+		42220: {
+			enabled: true,
+			name: 'Mainnet',
+			contracts: {
+				proxy: {
+					address: "0x11c82560FDe1e42A43c9011c458fe5948B22cdBa"
+				},
+				pid: 0,
+				coins: [
+					'0x765DE816845861e75A25fCA122bb6898B8B1282a',
+					'0x88eeC49252c8cbc039DCdB394c0c2BA2f1637EA0',
+					'0xef4229c8c3250C675F21BCefa42f58EfbfF6002a',
+				]
+			}
+		},
+	},
+	subgraphApi: "https://api.thegraph.com/subgraphs/name/0xa8c81519/my-subgraph"
 };
