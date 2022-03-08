@@ -5,7 +5,7 @@ export const environment = {
     liquiditySymbol: "CSLP-01",
     tokenSymbol: "CST",
     virtualPriceDiff: 0.006,
-    coins: [{ symbol: 'CUSD' }, { symbol: 'USDT' }, { symbol: 'USDC' }],
+	coins: [{ symbol: 'CUSD', decimals: 18 }, { symbol: 'USDT', decimals: 6 }, { symbol: 'USDC', decimals: 6 }],
     rpc: {
         56: "https://bsc-dataseed.binance.org/",
         97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',

@@ -4,7 +4,7 @@ export const environment = {
 	liquiditySymbol: "CSLP-01",
 	tokenSymbol: "CST",
 	virtualPriceDiff: 0.006,
-	coins: [{ symbol: 'CUSD' }, { symbol: 'USDT' }, { symbol: 'USDC' }],
+	coins: [{ symbol: 'CUSD', decimals: 18 }, { symbol: 'USDT', decimals: 6 }, { symbol: 'USDC', decimals: 6 }],
 	rpc: {
 		42220: 'https://forno.celo.org'
 	},
@@ -14,7 +14,7 @@ export const environment = {
 			name: 'Mainnet',
 			contracts: {
 				proxy: {
-					address: "0x11c82560FDe1e42A43c9011c458fe5948B22cdBa"
+					address: "0x1417b04E2Ce9cF52ca9e007749e8E2D89209F30b"
 				},
 				pid: 0,
 				coins: [
