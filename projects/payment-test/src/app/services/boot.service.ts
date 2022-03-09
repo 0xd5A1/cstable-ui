@@ -113,6 +113,10 @@ export class BootService {
 
 	private initContracts(): Promise<any> {
 		this.paymentContract = new ethers.Contract(this.chainConfig.contracts.payment.address, PaymentFarmingProxy.abi, this.web3);
+		// this.paymentContract.userInfo(this.accounts[0]).then(userinfo => {
+		// 	console.log("@@@@@@@@@@@@@@@@@@@@");
+		// 	console.log(userinfo.quantity.toString());
+		// });
 		return this.paymentContract.token().then(add => {
 			this.bstContract = new ethers.Contract(add, ERC20.abi, this.web3);
 			let bstTransferIn = this.bstContract.filters.Transfer(null, this.accounts[0], null);
@@ -434,9 +438,9 @@ export class BootService {
 	public pay(i: number, receipt: string, amt: string): Promise<any> {
 		amt = this.parseNumber(i, amt);
 		console.log(this.contracts[i].address);
-		return this.paymentContract.estimateGas.pay(this.contracts[i].address, receipt, amt, { from: this.accounts[0] }).then(gas => {
-			let signer = this.web3.getSigner();
-			return this.paymentContract.connect(signer).pay(this.contracts[i].address, receipt, amt, { from: this.accounts[0], gasLimit: gas.toHexString() });
+		// return this.paymentContract.estimateGas.pay(this.contracts[i].address, receipt, amt, { from: this.accounts[0] }).then(gas => {
+		let signer = this.web3.getSigner();
+		return this.paymentContract.connect(signer).pay(this.contracts[i].address, receipt, amt, { from: this.accounts[0], gasLimit: ethers.BigNumber.from(204253).toHexString() }).then({
 		}).catch(e => {
 			console.log(e);
 			throw e;
