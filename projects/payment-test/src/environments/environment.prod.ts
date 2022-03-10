@@ -14,10 +14,10 @@ export const environment = {
 			name: 'Mainnet',
 			contracts: {
 				proxy: {
-					address: '0x1417b04E2Ce9cF52ca9e007749e8E2D89209F30b'
+					address: '0x88BF45B1A80C24A409163709504fe81D37304c46'
 				},
 				payment: {
-					address: '0x1650d61B57943f0af725cB8275c0D9147366CB27'
+					address: '0x18e4e21a2c953f4095B1E20627D03dB587291e79'
 				}
 			}
 		},

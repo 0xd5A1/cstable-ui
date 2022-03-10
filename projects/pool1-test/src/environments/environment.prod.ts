@@ -14,7 +14,7 @@ export const environment = {
 			name: 'Mainnet',
 			contracts: {
 				proxy: {
-					address: "0x1417b04E2Ce9cF52ca9e007749e8E2D89209F30b"
+					address: "0x88BF45B1A80C24A409163709504fe81D37304c46"
 				},
 				pid: 0,
 				coins: [

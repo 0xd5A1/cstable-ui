@@ -30,16 +30,16 @@ export const environment = {
         url: 'https://forno.celo.org'
     },
     pool1: {
-		address: '0x58236aFaF0E2eA107ceCe1e260fE3f0b2DD983A0',
+		address: '0xBE3fd02D1b64c776BEAFB1438970757dCde63AAa',
 	},
 	liqudityFarmingProxy: {
-		address: '0x1417b04E2Ce9cF52ca9e007749e8E2D89209F30b'
+		address: '0x88BF45B1A80C24A409163709504fe81D37304c46'
 	},
 	bstToken: {
-		address: '0x0e944385C537730410cd5f5975dEE0f3d6A88a76'
+		address: '0x3a0f2216C28F5f5c486aB09DCc2CA72A3dFADD88'
 	},
 	paymentFarmingProxy: {
-		address: '0x1650d61B57943f0af725cB8275c0D9147366CB27'
+		address: '0x18e4e21a2c953f4095B1E20627D03dB587291e79'
 	},
 	cusd: {
 		address: '0x765DE816845861e75A25fCA122bb6898B8B1282a'
