@@ -26,7 +26,7 @@ export const environment = {
 		{
 			text: 'Docs',
 			active: false,
-			url: 'https://docs.cstable.fi',
+			url: 'https://docs.cstable.xyz',
 			target: '_blank'
 		}
 	],
