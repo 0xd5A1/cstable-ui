@@ -722,7 +722,7 @@ export class BootService {
 			lps = ethers.utils.parseEther(String(lps)).toString();
 			let amts = new Array();
 			minAmts.forEach((e, i) => {
-				amts.push(new BigNumber(e).multipliedBy(new BigNumber(10).exponentiatedBy(this.coins[i].decimals)));
+				amts.push(new BigNumber(e).multipliedBy(new BigNumber(10).exponentiatedBy(this.coins[i].decimals)).toFixed(0,BigNumber.ROUND_DOWN));
 				// amts.push('0');
 			});
 			return this.poolContract.estimateGas.remove_liquidity(lps, amts, { from: this.accounts[0] }).then(gas => {
